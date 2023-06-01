@@ -16,6 +16,17 @@
 		693FD8972A284C9F00D9F043 /* weather_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8962A284C9F00D9F043 /* weather_appTests.swift */; };
 		693FD8A12A284CA000D9F043 /* weather_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8A02A284CA000D9F043 /* weather_appUITests.swift */; };
 		693FD8A32A284CA000D9F043 /* weather_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8A22A284CA000D9F043 /* weather_appUITestsLaunchTests.swift */; };
+		693FD8B22A284E7000D9F043 /* libweathers-data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FD8B02A284E7000D9F043 /* libweathers-data.a */; };
+		693FD8B32A284E7000D9F043 /* libweathers-domain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FD8B12A284E7000D9F043 /* libweathers-domain.a */; };
+		693FD8B62A284FF600D9F043 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8B52A284FF600D9F043 /* RxCocoa */; };
+		693FD8B82A284FF600D9F043 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8B72A284FF600D9F043 /* RxRelay */; };
+		693FD8BA2A284FF600D9F043 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8B92A284FF600D9F043 /* RxSwift */; };
+		693FD8BD2A28522000D9F043 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8BC2A28522000D9F043 /* ReactorKit */; };
+		693FD8C02A28525900D9F043 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8BF2A28525900D9F043 /* SnapKit */; };
+		693FD8C32A2852CD00D9F043 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8C22A2852CD00D9F043 /* Alamofire */; };
+		693FD8C62A2853CD00D9F043 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8C52A2853CD00D9F043 /* Reusable */; };
+		693FD8C92A28542900D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8C82A28542900D9F043 /* Differentiator */; };
+		693FD8CB2A28542900D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8CA2A28542900D9F043 /* RxDataSources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,8 @@
 		693FD89C2A284C9F00D9F043 /* weather-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weather-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FD8A02A284CA000D9F043 /* weather_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather_appUITests.swift; sourceTree = "<group>"; };
 		693FD8A22A284CA000D9F043 /* weather_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		693FD8B02A284E7000D9F043 /* libweathers-data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		693FD8B12A284E7000D9F043 /* libweathers-domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD8B62A284FF600D9F043 /* RxCocoa in Frameworks */,
+				693FD8C32A2852CD00D9F043 /* Alamofire in Frameworks */,
+				693FD8B32A284E7000D9F043 /* libweathers-domain.a in Frameworks */,
+				693FD8BA2A284FF600D9F043 /* RxSwift in Frameworks */,
+				693FD8C02A28525900D9F043 /* SnapKit in Frameworks */,
+				693FD8CB2A28542900D9F043 /* RxDataSources in Frameworks */,
+				693FD8C62A2853CD00D9F043 /* Reusable in Frameworks */,
+				693FD8C92A28542900D9F043 /* Differentiator in Frameworks */,
+				693FD8B82A284FF600D9F043 /* RxRelay in Frameworks */,
+				693FD8BD2A28522000D9F043 /* ReactorKit in Frameworks */,
+				693FD8B22A284E7000D9F043 /* libweathers-data.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +107,7 @@
 				693FD8952A284C9F00D9F043 /* weather-appTests */,
 				693FD89F2A284CA000D9F043 /* weather-appUITests */,
 				693FD87D2A284C9E00D9F043 /* Products */,
+				693FD8AF2A284E7000D9F043 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +152,15 @@
 			path = "weather-appUITests";
 			sourceTree = "<group>";
 		};
+		693FD8AF2A284E7000D9F043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				693FD8B02A284E7000D9F043 /* libweathers-data.a */,
+				693FD8B12A284E7000D9F043 /* libweathers-domain.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +177,17 @@
 			dependencies = (
 			);
 			name = "weather-app";
+			packageProductDependencies = (
+				693FD8B52A284FF600D9F043 /* RxCocoa */,
+				693FD8B72A284FF600D9F043 /* RxRelay */,
+				693FD8B92A284FF600D9F043 /* RxSwift */,
+				693FD8BC2A28522000D9F043 /* ReactorKit */,
+				693FD8BF2A28525900D9F043 /* SnapKit */,
+				693FD8C22A2852CD00D9F043 /* Alamofire */,
+				693FD8C52A2853CD00D9F043 /* Reusable */,
+				693FD8C82A28542900D9F043 /* Differentiator */,
+				693FD8CA2A28542900D9F043 /* RxDataSources */,
+			);
 			productName = "weather-app";
 			productReference = 693FD87C2A284C9E00D9F043 /* weather-app.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +260,14 @@
 				Base,
 			);
 			mainGroup = 693FD8732A284C9E00D9F043;
+			packageReferences = (
+				693FD8B42A284FF600D9F043 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				693FD8BB2A28522000D9F043 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				693FD8BE2A28525900D9F043 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				693FD8C12A2852CD00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				693FD8C42A2853CD00D9F043 /* XCRemoteSwiftPackageReference "Reusable" */,
+				693FD8C72A28542900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 693FD87D2A284C9E00D9F043 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -602,6 +655,105 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		693FD8B42A284FF600D9F043 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		693FD8BB2A28522000D9F043 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		693FD8BE2A28525900D9F043 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		693FD8C12A2852CD00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		693FD8C42A2853CD00D9F043 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		693FD8C72A28542900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		693FD8B52A284FF600D9F043 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8B42A284FF600D9F043 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		693FD8B72A284FF600D9F043 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8B42A284FF600D9F043 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		693FD8B92A284FF600D9F043 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8B42A284FF600D9F043 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		693FD8BC2A28522000D9F043 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8BB2A28522000D9F043 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		693FD8BF2A28525900D9F043 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8BE2A28525900D9F043 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		693FD8C22A2852CD00D9F043 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8C12A2852CD00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		693FD8C52A2853CD00D9F043 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8C42A2853CD00D9F043 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+		693FD8C82A28542900D9F043 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8C72A28542900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		693FD8CA2A28542900D9F043 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8C72A28542900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 693FD8742A284C9E00D9F043 /* Project object */;
 }
