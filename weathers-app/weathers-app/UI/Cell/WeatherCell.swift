@@ -10,6 +10,9 @@ import Kingfisher
 import weathers_domain
 
 class WeatherCell: UITableViewCell {
+    
+    static let cellHeight: CGFloat = 80
+    
 
     // MARK: - Outlets
     
@@ -20,6 +23,7 @@ class WeatherCell: UITableViewCell {
     
     let weatherImg: UIImageView! = {
         let ui = UIImageView()
+        ui.contentMode = .scaleAspectFill
         return ui
     }()
     
@@ -49,7 +53,7 @@ class WeatherCell: UITableViewCell {
     
     // MARK: - Properties
     
-    
+    let kelvin: Double = 273.15
     
     
     // MARK: - Life Cycle
@@ -76,9 +80,9 @@ class WeatherCell: UITableViewCell {
         
         weatherLbl.text = data.weatherText
         
-        minCelsiusLbl.text = "\(data.minCelsius)"
+        minCelsiusLbl.text = "Min : \(data.minCelsius - kelvin)°C"
         
-        maxCelsiusLbl.text = "\(data.maxCelsius)"
+        maxCelsiusLbl.text = "Max : \(data.maxCelsius - kelvin)°C"
     }
 
     private func setLayout() {
@@ -110,7 +114,7 @@ class WeatherCell: UITableViewCell {
         celsiusStack.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-16)
             make.trailing.equalToSuperview().offset(-8)
-            make.width.greaterThanOrEqualTo(0)
+            make.width.equalTo(200)
             make.height.equalTo(20)
         }
         
