@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
-class WeatherRepository {
-    
+public protocol WeatherRepository {
+    func getCoordinates(city: String) -> Observable<Coordinate>
 }

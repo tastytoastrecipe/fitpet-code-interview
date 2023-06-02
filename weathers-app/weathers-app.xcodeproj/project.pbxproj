@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		693FD9142A2893FF00D9F043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9132A2893FF00D9F043 /* AppDelegate.swift */; };
 		693FD9162A2893FF00D9F043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9152A2893FF00D9F043 /* SceneDelegate.swift */; };
-		693FD9182A2893FF00D9F043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9172A2893FF00D9F043 /* ViewController.swift */; };
-		693FD91B2A2893FF00D9F043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693FD9192A2893FF00D9F043 /* Main.storyboard */; };
 		693FD91D2A28940000D9F043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693FD91C2A28940000D9F043 /* Assets.xcassets */; };
 		693FD9202A28940000D9F043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693FD91E2A28940000D9F043 /* LaunchScreen.storyboard */; };
 		693FD92B2A28940000D9F043 /* weathers_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD92A2A28940000D9F043 /* weathers_appTests.swift */; };
@@ -33,6 +31,9 @@
 		693FD96E2A28967A00D9F043 /* libweathers-data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FD96C2A28967A00D9F043 /* libweathers-data.a */; };
 		693FD96F2A28967A00D9F043 /* libweathers-domain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FD96D2A28967A00D9F043 /* libweathers-domain.a */; };
 		693FD9722A29684000D9F043 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9712A29684000D9F043 /* Kingfisher */; };
+		693FD9742A296B1500D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9732A296B1500D9F043 /* Differentiator */; };
+		693FD9762A296B1500D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9752A296B1500D9F043 /* RxDataSources */; };
+		693FD98C2A29AFA100D9F043 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD98B2A29AFA100D9F043 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,6 @@
 		693FD9102A2893FF00D9F043 /* weathers-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weathers-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FD9132A2893FF00D9F043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693FD9152A2893FF00D9F043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		693FD9172A2893FF00D9F043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		693FD91A2A2893FF00D9F043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		693FD91C2A28940000D9F043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		693FD91F2A28940000D9F043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		693FD9212A28940000D9F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		693FD94B2A28947700D9F043 /* HomeViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		693FD96C2A28967A00D9F043 /* libweathers-data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FD96D2A28967A00D9F043 /* libweathers-domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		693FD98B2A29AFA100D9F043 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD9742A296B1500D9F043 /* Differentiator in Frameworks */,
+				693FD9762A296B1500D9F043 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +143,6 @@
 				693FD9462A28947700D9F043 /* UI */,
 				693FD9132A2893FF00D9F043 /* AppDelegate.swift */,
 				693FD9152A2893FF00D9F043 /* SceneDelegate.swift */,
-				693FD9172A2893FF00D9F043 /* ViewController.swift */,
-				693FD9192A2893FF00D9F043 /* Main.storyboard */,
 				693FD91C2A28940000D9F043 /* Assets.xcassets */,
 				693FD91E2A28940000D9F043 /* LaunchScreen.storyboard */,
 				693FD9212A28940000D9F043 /* Info.plist */,
@@ -185,6 +185,7 @@
 		693FD9462A28947700D9F043 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				693FD98A2A29AF8500D9F043 /* Type */,
 				693FD9472A28947700D9F043 /* Cell */,
 				693FD9492A28947700D9F043 /* View */,
 			);
@@ -215,6 +216,14 @@
 				693FD96D2A28967A00D9F043 /* libweathers-domain.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		693FD98A2A29AF8500D9F043 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				693FD98B2A29AFA100D9F043 /* City.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +273,10 @@
 				693FD9282A28940000D9F043 /* PBXTargetDependency */,
 			);
 			name = "weathers-appTests";
+			packageProductDependencies = (
+				693FD9732A296B1500D9F043 /* Differentiator */,
+				693FD9752A296B1500D9F043 /* RxDataSources */,
+			);
 			productName = "weathers-appTests";
 			productReference = 693FD9262A28940000D9F043 /* weathers-appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -346,7 +359,6 @@
 			files = (
 				693FD9202A28940000D9F043 /* LaunchScreen.storyboard in Resources */,
 				693FD91D2A28940000D9F043 /* Assets.xcassets in Resources */,
-				693FD91B2A2893FF00D9F043 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FD9182A2893FF00D9F043 /* ViewController.swift in Sources */,
+				693FD98C2A29AFA100D9F043 /* City.swift in Sources */,
 				693FD94C2A28947700D9F043 /* AppContainer.swift in Sources */,
 				693FD94D2A28947700D9F043 /* WeatherCell.swift in Sources */,
 				693FD9142A2893FF00D9F043 /* AppDelegate.swift in Sources */,
@@ -414,14 +426,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		693FD9192A2893FF00D9F043 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				693FD91A2A2893FF00D9F043 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		693FD91E2A28940000D9F043 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -483,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -537,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -557,17 +561,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "weathers-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -584,17 +590,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "weathers-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -609,10 +617,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -628,10 +639,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -646,9 +660,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,9 +681,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwon.weathers-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -836,6 +858,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 693FD9702A29684000D9F043 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		693FD9732A296B1500D9F043 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD9592A28957900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		693FD9752A296B1500D9F043 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD9592A28957900D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

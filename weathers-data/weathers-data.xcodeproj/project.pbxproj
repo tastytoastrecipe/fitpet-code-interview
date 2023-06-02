@@ -11,6 +11,11 @@
 		693FD8DF2A28684700D9F043 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8DE2A28684700D9F043 /* RemoteDataSource.swift */; };
 		693FD8E42A28696400D9F043 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8E32A28696400D9F043 /* LocalDataSource.swift */; };
 		693FD9042A288DBB00D9F043 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9032A288DBB00D9F043 /* DataContainer.swift */; };
+		693FD9792A29833C00D9F043 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9782A29833C00D9F043 /* ExString.swift */; };
+		693FD97C2A2985A100D9F043 /* CoordinatesGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD97B2A2985A100D9F043 /* CoordinatesGetRequest.swift */; };
+		693FD97E2A29862100D9F043 /* CoordinatesGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */; };
+		693FD9872A29ABDF00D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9862A29ABDF00D9F043 /* Differentiator */; };
+		693FD9892A29ABDF00D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9882A29ABDF00D9F043 /* RxDataSources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +36,9 @@
 		693FD8DE2A28684700D9F043 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		693FD8E32A28696400D9F043 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		693FD9032A288DBB00D9F043 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		693FD9782A29833C00D9F043 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		693FD97B2A2985A100D9F043 /* CoordinatesGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesGetRequest.swift; sourceTree = "<group>"; };
+		693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesGetResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD9872A29ABDF00D9F043 /* Differentiator in Frameworks */,
+				693FD9892A29ABDF00D9F043 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +73,8 @@
 		693FD86B2A284AA300D9F043 /* weathers-data */ = {
 			isa = PBXGroup;
 			children = (
+				693FD97A2A29850E00D9F043 /* Dto */,
+				693FD9772A29831C00D9F043 /* Extension */,
 				693FD8E02A2868CD00D9F043 /* Container */,
 				693FD8DD2A28683B00D9F043 /* DataSource */,
 				693FD8D82A28675500D9F043 /* RepositoryImpl */,
@@ -95,6 +107,23 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
+		693FD9772A29831C00D9F043 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				693FD9782A29833C00D9F043 /* ExString.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		693FD97A2A29850E00D9F043 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				693FD97B2A2985A100D9F043 /* CoordinatesGetRequest.swift */,
+				693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,6 +140,10 @@
 			dependencies = (
 			);
 			name = "weathers-data";
+			packageProductDependencies = (
+				693FD9862A29ABDF00D9F043 /* Differentiator */,
+				693FD9882A29ABDF00D9F043 /* RxDataSources */,
+			);
 			productName = "weathers-data";
 			productReference = 693FD8692A284AA300D9F043 /* libweathers-data.a */;
 			productType = "com.apple.product-type.library.static";
@@ -140,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 693FD8602A284AA300D9F043;
+			packageReferences = (
+				693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 693FD86A2A284AA300D9F043 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,10 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD97C2A2985A100D9F043 /* CoordinatesGetRequest.swift in Sources */,
 				693FD8DF2A28684700D9F043 /* RemoteDataSource.swift in Sources */,
 				693FD8DA2A2867C400D9F043 /* WeatherRepositoryImpl.swift in Sources */,
+				693FD97E2A29862100D9F043 /* CoordinatesGetResponse.swift in Sources */,
 				693FD8E42A28696400D9F043 /* LocalDataSource.swift in Sources */,
 				693FD9042A288DBB00D9F043 /* DataContainer.swift in Sources */,
+				693FD9792A29833C00D9F043 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +376,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		693FD9862A29ABDF00D9F043 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		693FD9882A29ABDF00D9F043 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 693FD8612A284AA300D9F043 /* Project object */;
 }

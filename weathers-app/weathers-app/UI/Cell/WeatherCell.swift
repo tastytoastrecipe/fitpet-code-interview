@@ -76,9 +76,9 @@ class WeatherCell: UITableViewCell {
         
         weatherLbl.text = data.weatherText
         
-        minCelsiusLbl.text = data.minCelsius
+        minCelsiusLbl.text = "\(data.minCelsius)"
         
-        maxCelsiusLbl.text = data.maxCelsius
+        maxCelsiusLbl.text = "\(data.maxCelsius)"
     }
 
     private func setLayout() {

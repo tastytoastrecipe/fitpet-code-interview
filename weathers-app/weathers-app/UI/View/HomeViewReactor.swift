@@ -25,19 +25,29 @@ class HomeViewReactor: Reactor {
     }
     
     var initialState: State
+   
     var container: Container
+    
+    let disposeBag = DisposeBag()
     
     init(container: Container) {
         self.container = container
         initialState = State()
         action.onNext(.fetch)
-        
-        
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .fetch:
+            
+            // get coordinate
+            let coordinateUseCase = container.resolve(GetCoordinatesUseCase.self)!
+            coordinateUseCase.run(city: City.seoul.rawValue)
+                .subscribe(onNext: { coordinate in
+                    print(" 🐻‍❄️ [COORDINATE]\n\(coordinate)")
+                })
+                .disposed(by: disposeBag)
+            
             // fetch datas..
             //
             let testResult = Result<[WeatherSection], Error>.success([])
