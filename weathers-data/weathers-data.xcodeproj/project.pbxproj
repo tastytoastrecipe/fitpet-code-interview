@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		693FD86D2A284AA300D9F043 /* weathers_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD86C2A284AA300D9F043 /* weathers_data.swift */; };
+		693FD8DA2A2867C400D9F043 /* WeatherRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8D92A2867C400D9F043 /* WeatherRepositoryImpl.swift */; };
+		693FD8DF2A28684700D9F043 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8DE2A28684700D9F043 /* RemoteDataSource.swift */; };
+		693FD8E42A28696400D9F043 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8E32A28696400D9F043 /* LocalDataSource.swift */; };
+		693FD9042A288DBB00D9F043 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9032A288DBB00D9F043 /* DataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,10 @@
 
 /* Begin PBXFileReference section */
 		693FD8692A284AA300D9F043 /* libweathers-data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libweathers-data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		693FD86C2A284AA300D9F043 /* weathers_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weathers_data.swift; sourceTree = "<group>"; };
+		693FD8D92A2867C400D9F043 /* WeatherRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryImpl.swift; sourceTree = "<group>"; };
+		693FD8DE2A28684700D9F043 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		693FD8E32A28696400D9F043 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		693FD9032A288DBB00D9F043 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,36 @@
 		693FD86B2A284AA300D9F043 /* weathers-data */ = {
 			isa = PBXGroup;
 			children = (
-				693FD86C2A284AA300D9F043 /* weathers_data.swift */,
+				693FD8E02A2868CD00D9F043 /* Container */,
+				693FD8DD2A28683B00D9F043 /* DataSource */,
+				693FD8D82A28675500D9F043 /* RepositoryImpl */,
 			);
 			path = "weathers-data";
+			sourceTree = "<group>";
+		};
+		693FD8D82A28675500D9F043 /* RepositoryImpl */ = {
+			isa = PBXGroup;
+			children = (
+				693FD8D92A2867C400D9F043 /* WeatherRepositoryImpl.swift */,
+			);
+			path = RepositoryImpl;
+			sourceTree = "<group>";
+		};
+		693FD8DD2A28683B00D9F043 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				693FD8DE2A28684700D9F043 /* RemoteDataSource.swift */,
+				693FD8E32A28696400D9F043 /* LocalDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		693FD8E02A2868CD00D9F043 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				693FD9032A288DBB00D9F043 /* DataContainer.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +127,7 @@
 				TargetAttributes = {
 					693FD8682A284AA300D9F043 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -120,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FD86D2A284AA300D9F043 /* weathers_data.swift in Sources */,
+				693FD8DF2A28684700D9F043 /* RemoteDataSource.swift in Sources */,
+				693FD8DA2A2867C400D9F043 /* WeatherRepositoryImpl.swift in Sources */,
+				693FD8E42A28696400D9F043 /* LocalDataSource.swift in Sources */,
+				693FD9042A288DBB00D9F043 /* DataContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +214,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -231,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -244,10 +281,17 @@
 		693FD8712A284AA300D9F043 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -256,7 +300,13 @@
 		693FD8722A284AA300D9F043 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

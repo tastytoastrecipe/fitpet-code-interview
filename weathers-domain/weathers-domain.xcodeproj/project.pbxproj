@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		693FD85A2A284A8700D9F043 /* weathers_domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8592A284A8700D9F043 /* weathers_domain.swift */; };
+		693FD8DC2A2867F000D9F043 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8DB2A2867F000D9F043 /* WeatherRepository.swift */; };
+		693FD8EF2A287D1600D9F043 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD8EE2A287D1600D9F043 /* Weather.swift */; };
+		693FD8F52A28829300D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8F42A28829300D9F043 /* Differentiator */; };
+		693FD8F72A28829300D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD8F62A28829300D9F043 /* RxDataSources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,8 @@
 
 /* Begin PBXFileReference section */
 		693FD8562A284A8700D9F043 /* libweathers-domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libweathers-domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		693FD8592A284A8700D9F043 /* weathers_domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weathers_domain.swift; sourceTree = "<group>"; };
+		693FD8DB2A2867F000D9F043 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		693FD8EE2A287D1600D9F043 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD8F52A28829300D9F043 /* Differentiator in Frameworks */,
+				693FD8F72A28829300D9F043 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +63,34 @@
 		693FD8582A284A8700D9F043 /* weathers-domain */ = {
 			isa = PBXGroup;
 			children = (
-				693FD8592A284A8700D9F043 /* weathers_domain.swift */,
+				693FD8ED2A287D0100D9F043 /* Model */,
+				693FD8EC2A287CD800D9F043 /* UseCase */,
+				693FD8D72A28674900D9F043 /* Repository */,
 			);
 			path = "weathers-domain";
+			sourceTree = "<group>";
+		};
+		693FD8D72A28674900D9F043 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				693FD8DB2A2867F000D9F043 /* WeatherRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		693FD8EC2A287CD800D9F043 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		693FD8ED2A287D0100D9F043 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				693FD8EE2A287D1600D9F043 /* Weather.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +109,10 @@
 			dependencies = (
 			);
 			name = "weathers-domain";
+			packageProductDependencies = (
+				693FD8F42A28829300D9F043 /* Differentiator */,
+				693FD8F62A28829300D9F043 /* RxDataSources */,
+			);
 			productName = "weathers-domain";
 			productReference = 693FD8562A284A8700D9F043 /* libweathers-domain.a */;
 			productType = "com.apple.product-type.library.static";
@@ -94,6 +129,7 @@
 				TargetAttributes = {
 					693FD8552A284A8700D9F043 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -106,6 +142,9 @@
 				Base,
 			);
 			mainGroup = 693FD84D2A284A8700D9F043;
+			packageReferences = (
+				693FD8F32A28829300D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 693FD8572A284A8700D9F043 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FD85A2A284A8700D9F043 /* weathers_domain.swift in Sources */,
+				693FD8EF2A287D1600D9F043 /* Weather.swift in Sources */,
+				693FD8DC2A2867F000D9F043 /* WeatherRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -231,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -244,10 +284,17 @@
 		693FD85E2A284A8700D9F043 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -256,7 +303,13 @@
 		693FD85F2A284A8700D9F043 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -287,6 +340,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		693FD8F32A28829300D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		693FD8F42A28829300D9F043 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8F32A28829300D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		693FD8F62A28829300D9F043 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD8F32A28829300D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 693FD84E2A284A8700D9F043 /* Project object */;
 }
