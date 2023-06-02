@@ -10,4 +10,7 @@
    <FileRef
       location = "group:weathers-data/weathers-data.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:logger/logger.xcodeproj">
+   </FileRef>
 </Workspace>

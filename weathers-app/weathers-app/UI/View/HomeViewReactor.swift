@@ -9,6 +9,7 @@ import Foundation
 import ReactorKit
 import Swinject
 import weathers_domain
+import logger
 
 class HomeViewReactor: Reactor {
     
@@ -47,13 +48,14 @@ class HomeViewReactor: Reactor {
                 let city = City.seoul.rawValue
                 coordinateUseCase.run(city: city)
                     .subscribe(onNext: { coordinate in
-                        print(" 🐻‍❄️ [COORDINATE]\n\(coordinate)")
+                        showLog(logType: .normal, title: "COORDINATE", "\(coordinate)")
                 
                         // 해당 위치의 날씨 가져오기
                         let weathersUseCase = self.container.resolve(FetchWeathersUseCase.self)!
                         weathersUseCase.run(city: coordinate.city, lat: coordinate.lat, lon: coordinate.lon)
                             .subscribe(onNext: { weatherSection in
-                                print(" ☀️☁️ [WEATHER SECTION]\n\(weatherSection)")
+                                showLog(logType: .weather, title: "WEATHER SECTION", "\(weatherSection)")
+                                
                                 emitter.onNext(.fetch([weatherSection]))
                                 emitter.onCompleted()
                             }, onError: { err in

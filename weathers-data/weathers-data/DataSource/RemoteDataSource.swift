@@ -28,11 +28,9 @@ class RemoteDataSource {
     
     func getCoordinates(_ param: CoordinatesGetRequest) -> Observable<[CoordinatesGetResponse]> {
         return Observable.create { emitter in
-            let tag = "\(type(of: self))/\(#function)"
             let url = "\(self.apiHost)\(self.coodinatesPath)"
             
             AF.request(url, method: .get, parameters: param)
-                .response(completionHandler: { self.printLog(tag: tag, $0.data) })
                 .responseDecodable(of: [CoordinatesGetResponse].self, decoder: self.jsonDecoder) {
                     switch $0.result {
                     case .success(let value):
@@ -48,11 +46,9 @@ class RemoteDataSource {
     
     func fetchWeathers(_ param: WeathersGetRequest) -> Observable<WeathersGetResponse> {
         return Observable.create { emitter in
-            let tag = "\(type(of: self))/\(#function)"
             let url = "\(self.apiHost)\(self.weathersPath)"
             
             AF.request(url, method: .get, parameters: param)
-                .response(completionHandler: { self.printLog(tag: tag, $0.data) })
                 .responseDecodable(of: WeathersGetResponse.self, decoder: self.jsonDecoder) {
                     switch $0.result {
                     case .success(let value):
@@ -65,24 +61,5 @@ class RemoteDataSource {
             
             return Disposables.create()
         }
-    }
-    
-    
-    /// 로그 출력
-    private func printLog(tag: String, _ data: Data?) {
-        if let data = data,
-           let json = String(data: data, encoding: .utf8)
-        {
-            print("[\(nowString()), \(tag)]\n📥 Response : \(json)")
-        } else {
-            print("[\(nowString()), \(tag)]\n📥 Response : N/A")
-        }
-    }
-    
-    private func nowString() -> String {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        df.timeZone = NSTimeZone.local
-        return df.string(from: Date())
     }
 }
