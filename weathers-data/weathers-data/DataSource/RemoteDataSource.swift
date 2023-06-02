@@ -12,6 +12,7 @@ import Alamofire
 class RemoteDataSource {
     
     var apiKey: String { "01ce61da34e19904621517d1b3590d27" }
+    var iconUrl: String { "https://openweathermap.org/img/wn/%@.png" }
     
     private var apiHost: String = "http://api.openweathermap.org/"
     private var coodinatesPath: String = "geo/1.0/direct"
@@ -22,17 +23,13 @@ class RemoteDataSource {
     
     init() {
         jsonEncoder = JSONParameterEncoder()
-        jsonEncoder.encoder.dateEncodingStrategy = .iso8601
-
         jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .iso8601
     }
     
     func getCoordinates(_ param: CoordinatesGetRequest) -> Observable<[CoordinatesGetResponse]> {
         return Observable.create { emitter in
             let tag = "\(type(of: self))/\(#function)"
             let url = "\(self.apiHost)\(self.coodinatesPath)"
-                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             
             AF.request(url, method: .get, parameters: param)
                 .response(completionHandler: { self.printLog(tag: tag, $0.data) })
@@ -45,6 +42,27 @@ class RemoteDataSource {
                         emitter.onError(error)
                     }
                 }
+            return Disposables.create()
+        }
+    }
+    
+    func fetchWeathers(_ param: WeathersGetRequest) -> Observable<WeathersGetResponse> {
+        return Observable.create { emitter in
+            let tag = "\(type(of: self))/\(#function)"
+            let url = "\(self.apiHost)\(self.weathersPath)"
+            
+            AF.request(url, method: .get, parameters: param)
+                .response(completionHandler: { self.printLog(tag: tag, $0.data) })
+                .responseDecodable(of: WeathersGetResponse.self, decoder: self.jsonDecoder) {
+                    switch $0.result {
+                    case .success(let value):
+                        emitter.onNext(value)
+                        emitter.onCompleted()
+                    case .failure(let error):
+                        emitter.onError(error)
+                    }
+                }
+            
             return Disposables.create()
         }
     }

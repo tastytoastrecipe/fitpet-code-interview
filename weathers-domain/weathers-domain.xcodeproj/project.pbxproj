@@ -14,6 +14,7 @@
 		693FD9802A29A52100D9F043 /* GetCoordinatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD97F2A29A52100D9F043 /* GetCoordinatesUseCase.swift */; };
 		693FD9822A29A55F00D9F043 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9812A29A55F00D9F043 /* UseCase.swift */; };
 		693FD9842A29A96400D9F043 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9832A29A96400D9F043 /* Coordinate.swift */; };
+		693FD9A72A29C71800D9F043 /* FetchWeathersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9A62A29C71800D9F043 /* FetchWeathersUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		693FD97F2A29A52100D9F043 /* GetCoordinatesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoordinatesUseCase.swift; sourceTree = "<group>"; };
 		693FD9812A29A55F00D9F043 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		693FD9832A29A96400D9F043 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		693FD9A62A29C71800D9F043 /* FetchWeathersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeathersUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		693FD8582A284A8700D9F043 /* weathers-domain */ = {
 			isa = PBXGroup;
 			children = (
+				693FD9932A29C0D900D9F043 /* Extensions */,
 				693FD8ED2A287D0100D9F043 /* Model */,
 				693FD8EC2A287CD800D9F043 /* UseCase */,
 				693FD8D72A28674900D9F043 /* Repository */,
@@ -89,6 +92,7 @@
 			children = (
 				693FD9812A29A55F00D9F043 /* UseCase.swift */,
 				693FD97F2A29A52100D9F043 /* GetCoordinatesUseCase.swift */,
+				693FD9A62A29C71800D9F043 /* FetchWeathersUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -100,6 +104,13 @@
 				693FD9832A29A96400D9F043 /* Coordinate.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		693FD9932A29C0D900D9F043 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				693FD9802A29A52100D9F043 /* GetCoordinatesUseCase.swift in Sources */,
 				693FD8DC2A2867F000D9F043 /* WeatherRepository.swift in Sources */,
 				693FD9842A29A96400D9F043 /* Coordinate.swift in Sources */,
+				693FD9A72A29C71800D9F043 /* FetchWeathersUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, StoryboardView {
         reactor.state.map { $0.datas }
             .filter { !$0.isEmpty }
             .subscribe (onNext: { datas in
-                print(" 🙈 [HomeViewModel - fetch] success! \n \(datas)")
+                
             })
             .disposed(by: disposeBag)
     }

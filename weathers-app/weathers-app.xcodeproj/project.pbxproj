@@ -34,6 +34,7 @@
 		693FD9742A296B1500D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9732A296B1500D9F043 /* Differentiator */; };
 		693FD9762A296B1500D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9752A296B1500D9F043 /* RxDataSources */; };
 		693FD98C2A29AFA100D9F043 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD98B2A29AFA100D9F043 /* City.swift */; };
+		693FD9A92A29D2F600D9F043 /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD9A82A29D2F600D9F043 /* ExDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		693FD96C2A28967A00D9F043 /* libweathers-data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FD96D2A28967A00D9F043 /* libweathers-domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FD98B2A29AFA100D9F043 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		693FD9A82A29D2F600D9F043 /* ExDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		693FD9432A28947700D9F043 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				693FD9A82A29D2F600D9F043 /* ExDate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 			files = (
 				693FD98C2A29AFA100D9F043 /* City.swift in Sources */,
 				693FD94C2A28947700D9F043 /* AppContainer.swift in Sources */,
+				693FD9A92A29D2F600D9F043 /* ExDate.swift in Sources */,
 				693FD94D2A28947700D9F043 /* WeatherCell.swift in Sources */,
 				693FD9142A2893FF00D9F043 /* AppDelegate.swift in Sources */,
 				693FD9162A2893FF00D9F043 /* SceneDelegate.swift in Sources */,

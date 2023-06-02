@@ -68,7 +68,7 @@ class WeatherCell: UITableViewCell {
     // MARK: - Methods
     
     func setContent(data: Weather) {
-        titleLbl.text = data.day
+        titleLbl.text = data.day.toWeatherDateString()
         
         if let url = URL(string: data.wetherImgUrl) {
             weatherImg.kf.setImage(with: url)

@@ -17,6 +17,11 @@ public class AppContainer {
             GetCoordinatesUseCase(repository: r.resolve(WeatherRepository.self)!)
         }
         .inObjectScope(.container)
+        
+        container.register(FetchWeathersUseCase.self) { r in
+            FetchWeathersUseCase(repository: r.resolve(WeatherRepository.self)!)
+        }
+        .inObjectScope(.container)
     }
     
 }

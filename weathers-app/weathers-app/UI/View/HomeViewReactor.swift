@@ -17,7 +17,7 @@ class HomeViewReactor: Reactor {
     }
     
     enum Mutation {
-        case fetch(Result<[WeatherSection], Error>)
+        case fetch([WeatherSection])
     }
     
     struct State {
@@ -40,34 +40,43 @@ class HomeViewReactor: Reactor {
         switch action {
         case .fetch:
             
-            // get coordinate
-            let coordinateUseCase = container.resolve(GetCoordinatesUseCase.self)!
-            coordinateUseCase.run(city: City.seoul.rawValue)
-                .subscribe(onNext: { coordinate in
-                    print(" 🐻‍❄️ [COORDINATE]\n\(coordinate)")
-                })
-                .disposed(by: disposeBag)
-            
-            // fetch datas..
-            //
-            let testResult = Result<[WeatherSection], Error>.success([])
-            return Observable.just(.fetch(testResult))
+            return Observable<Mutation>.create { emitter in
+                let coordinateUseCase = self.container.resolve(GetCoordinatesUseCase.self)!
+                
+                // 위도, 경도 가져오기
+                let city = City.seoul.rawValue
+                coordinateUseCase.run(city: city)
+                    .subscribe(onNext: { coordinate in
+                        print(" 🐻‍❄️ [COORDINATE]\n\(coordinate)")
+                
+                        // 해당 위치의 날씨 가져오기
+                        let weathersUseCase = self.container.resolve(FetchWeathersUseCase.self)!
+                        weathersUseCase.run(city: coordinate.city, lat: coordinate.lat, lon: coordinate.lon)
+                            .subscribe(onNext: { weatherSection in
+                                print(" ☀️☁️ [WEATHER SECTION]\n\(weatherSection)")
+                                emitter.onNext(.fetch([weatherSection]))
+                                emitter.onCompleted()
+                            }, onError: { err in
+                                emitter.onError(err)
+                            })
+                            .disposed(by: self.disposeBag)
+                        
+                        
+                    })
+                    .disposed(by: self.disposeBag)
+                
+                
+                
+                return Disposables.create()
+            }
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .fetch(let result):
-            
-            do {
-                let datas = try result.get()
-                state.datas = datas
-            } catch {
-                print(" 🙈 [HomeViewModel - fetch] failed.. \n\(error.localizedDescription)")
-            }
-            
-            break
+        case .fetch(let weatherSections):
+            state.datas = weatherSections
         }
         
         return state

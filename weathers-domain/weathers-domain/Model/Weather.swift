@@ -9,23 +9,24 @@ import Foundation
 import RxDataSources
 
 public struct Weather {
-    public let day: String
+    public let day: Date
     
     public let wetherImgUrl: String
     
     public let weatherText: String
     
-    public let minCelsius: Float
+    public let minCelsius: Double
     
-    public let maxCelsius: Float
+    public let maxCelsius: Double
     
-    public init(day: String, wetherImgUrl: String, weatherText: String, minCelsius: Float, maxCelsius: Float) {
+    public init(day: Date, wetherImgUrl: String, weatherText: String, minCelsius: Double, maxCelsius: Double) {
         self.day = day
         self.wetherImgUrl = wetherImgUrl
         self.weatherText = weatherText
         self.minCelsius = minCelsius
         self.maxCelsius = maxCelsius
     }
+    
 }
 
 public struct WeatherSection {

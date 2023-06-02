@@ -16,6 +16,11 @@
 		693FD97E2A29862100D9F043 /* CoordinatesGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */; };
 		693FD9872A29ABDF00D9F043 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9862A29ABDF00D9F043 /* Differentiator */; };
 		693FD9892A29ABDF00D9F043 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9882A29ABDF00D9F043 /* RxDataSources */; };
+		693FD98E2A29B8E800D9F043 /* WeathersGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD98D2A29B8E800D9F043 /* WeathersGetRequest.swift */; };
+		693FD9902A29B93700D9F043 /* WeathersGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FD98F2A29B93700D9F043 /* WeathersGetResponse.swift */; };
+		693FD99F2A29C61B00D9F043 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD99E2A29C61B00D9F043 /* Alamofire */; };
+		693FD9A22A29C65700D9F043 /* libweathers-domain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FD9A12A29C65700D9F043 /* libweathers-domain.a */; };
+		693FD9A52A29C6AD00D9F043 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 693FD9A42A29C6AD00D9F043 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +44,9 @@
 		693FD9782A29833C00D9F043 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
 		693FD97B2A2985A100D9F043 /* CoordinatesGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesGetRequest.swift; sourceTree = "<group>"; };
 		693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesGetResponse.swift; sourceTree = "<group>"; };
+		693FD98D2A29B8E800D9F043 /* WeathersGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersGetRequest.swift; sourceTree = "<group>"; };
+		693FD98F2A29B93700D9F043 /* WeathersGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersGetResponse.swift; sourceTree = "<group>"; };
+		693FD9A12A29C65700D9F043 /* libweathers-domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libweathers-domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +54,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FD99F2A29C61B00D9F043 /* Alamofire in Frameworks */,
+				693FD9A52A29C6AD00D9F043 /* Swinject in Frameworks */,
 				693FD9872A29ABDF00D9F043 /* Differentiator in Frameworks */,
+				693FD9A22A29C65700D9F043 /* libweathers-domain.a in Frameworks */,
 				693FD9892A29ABDF00D9F043 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +70,7 @@
 			children = (
 				693FD86B2A284AA300D9F043 /* weathers-data */,
 				693FD86A2A284AA300D9F043 /* Products */,
+				693FD9A02A29C65700D9F043 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,8 +132,18 @@
 			children = (
 				693FD97B2A2985A100D9F043 /* CoordinatesGetRequest.swift */,
 				693FD97D2A29862100D9F043 /* CoordinatesGetResponse.swift */,
+				693FD98D2A29B8E800D9F043 /* WeathersGetRequest.swift */,
+				693FD98F2A29B93700D9F043 /* WeathersGetResponse.swift */,
 			);
 			path = Dto;
+			sourceTree = "<group>";
+		};
+		693FD9A02A29C65700D9F043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				693FD9A12A29C65700D9F043 /* libweathers-domain.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +165,8 @@
 			packageProductDependencies = (
 				693FD9862A29ABDF00D9F043 /* Differentiator */,
 				693FD9882A29ABDF00D9F043 /* RxDataSources */,
+				693FD99E2A29C61B00D9F043 /* Alamofire */,
+				693FD9A42A29C6AD00D9F043 /* Swinject */,
 			);
 			productName = "weathers-data";
 			productReference = 693FD8692A284AA300D9F043 /* libweathers-data.a */;
@@ -175,6 +199,8 @@
 			mainGroup = 693FD8602A284AA300D9F043;
 			packageReferences = (
 				693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				693FD99D2A29C61B00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				693FD9A32A29C6AD00D9F043 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 693FD86A2A284AA300D9F043 /* Products */;
 			projectDirPath = "";
@@ -197,6 +223,8 @@
 				693FD8E42A28696400D9F043 /* LocalDataSource.swift in Sources */,
 				693FD9042A288DBB00D9F043 /* DataContainer.swift in Sources */,
 				693FD9792A29833C00D9F043 /* ExString.swift in Sources */,
+				693FD98E2A29B8E800D9F043 /* WeathersGetRequest.swift in Sources */,
+				693FD9902A29B93700D9F043 /* WeathersGetResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +414,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		693FD99D2A29C61B00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		693FD9A32A29C6AD00D9F043 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -398,6 +442,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 693FD9852A29ABDF00D9F043 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		693FD99E2A29C61B00D9F043 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD99D2A29C61B00D9F043 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		693FD9A42A29C6AD00D9F043 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FD9A32A29C6AD00D9F043 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

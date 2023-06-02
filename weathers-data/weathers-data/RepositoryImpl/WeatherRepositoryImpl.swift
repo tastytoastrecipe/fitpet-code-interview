@@ -28,4 +28,32 @@ class WeatherRepositoryImpl: WeatherRepository {
                 return coordinate
             }
     }
+    
+    func fetchWeathers(city: String, lat: Double, lon: Double) -> Observable<WeatherSection> {
+        let request = WeathersGetRequest(lat: lat, lon: lon, appid: remoteDataSource.apiKey)
+        return remoteDataSource.fetchWeathers(request)
+            .map { response in
+                
+                var weathers: [Weather] = []
+                for e in response.list {
+                    guard let weatherData = e.weather.first else { continue }
+                    let iconUrl = String(format: self.remoteDataSource.iconUrl, weatherData.icon)
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    guard let date = dateFormatter.date(from: e.dt_txt) else { continue }
+                    
+                    let weather = Weather(day: date,
+                                          wetherImgUrl: iconUrl,
+                                          weatherText: weatherData.main,
+                                          minCelsius: e.main.temp_min,
+                                          maxCelsius: e.main.temp_max)
+                    
+                    weathers.append(weather)
+                }
+                
+                let weatherSection = WeatherSection(header: city, items: weathers)
+                return weatherSection
+            }
+    }
 }

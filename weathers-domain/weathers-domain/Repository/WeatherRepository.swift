@@ -10,4 +10,5 @@ import RxSwift
 
 public protocol WeatherRepository {
     func getCoordinates(city: String) -> Observable<Coordinate>
+    func fetchWeathers(city: String, lat: Double, lon: Double) -> Observable<WeatherSection>
 }
