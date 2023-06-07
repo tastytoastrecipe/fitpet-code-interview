@@ -8,6 +8,15 @@
 import Foundation
 import RxSwift
 
+
+/**
+ 
+ # FetchWeathersUseCase #
+ 
+ 도시의 날씨 정보를 요청하는 UseCase
+ 
+*/
+
 public class FetchWeathersUseCase: UseCase {
     
     // 특정 도시의 날씨 정보 가져옴

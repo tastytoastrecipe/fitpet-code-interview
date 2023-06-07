@@ -8,6 +8,15 @@
 import Foundation
 import RxDataSources
 
+
+/**
+ 
+ # Weather #
+ 
+ 특정 도시의 날씨 정보
+ 
+*/
+
 public struct Weather {
     public let day: Date
     

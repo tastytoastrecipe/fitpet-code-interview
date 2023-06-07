@@ -9,6 +9,15 @@ import UIKit
 import Kingfisher
 import weathers_domain
 
+
+/**
+ 
+ # WeatherCell #
+ 
+ 홈 화면의 날씨 정보를 표시하는 cell
+ 
+*/
+
 class WeatherCell: UITableViewCell {
     
     static let cellHeight: CGFloat = 80
