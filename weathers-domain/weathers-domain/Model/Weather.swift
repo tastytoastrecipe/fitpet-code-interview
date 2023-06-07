@@ -8,10 +8,19 @@
 import Foundation
 import RxDataSources
 
+
+/**
+ 
+ # Weather #
+ 
+ 특정 도시의 날씨 정보
+ 
+*/
+
 public struct Weather {
     public let day: Date
     
-    public let wetherImgUrl: String
+    public let weatherImgUrl: String
     
     public let weatherText: String
     
@@ -19,9 +28,9 @@ public struct Weather {
     
     public let maxCelsius: Double
     
-    public init(day: Date, wetherImgUrl: String, weatherText: String, minCelsius: Double, maxCelsius: Double) {
+    public init(day: Date, weatherImgUrl: String, weatherText: String, minCelsius: Double, maxCelsius: Double) {
         self.day = day
-        self.wetherImgUrl = wetherImgUrl
+        self.weatherImgUrl = weatherImgUrl
         self.weatherText = weatherText
         self.minCelsius = minCelsius
         self.maxCelsius = maxCelsius

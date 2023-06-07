@@ -7,6 +7,15 @@
 
 import Foundation
 
+
+/**
+ 
+ # Coordinate #
+ 
+ 특정 도시의 위치 정보
+ 
+*/
+
 public struct Coordinate {
     public let city: String
     

@@ -11,6 +11,15 @@ import Swinject
 import weathers_domain
 import logger
 
+
+/**
+ 
+ # HomeViewReactor #
+ 
+ 홈 화면의 Reactor (ViewModel)
+ 
+*/
+
 class HomeViewReactor: Reactor {
     
     enum Action {
@@ -40,37 +49,7 @@ class HomeViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .fetch:
-            
-            return Observable<Mutation>.create { emitter in
-                let coordinateUseCase = self.container.resolve(GetCoordinatesUseCase.self)!
-                
-                // 위도, 경도 가져오기
-                let city = City.seoul.rawValue
-                coordinateUseCase.run(city: city)
-                    .subscribe(onNext: { coordinate in
-//                        showLog(logType: .normal, title: "COORDINATE", "\(coordinate)")
-                
-                        // 해당 위치의 날씨 가져오기
-                        let weathersUseCase = self.container.resolve(FetchWeathersUseCase.self)!
-                        weathersUseCase.run(city: coordinate.city, lat: coordinate.lat, lon: coordinate.lon)
-                            .subscribe(onNext: { weatherSection in
-//                                showLog(logType: .weather, title: "WEATHER SECTION", "\(weatherSection)")
-                                
-                                emitter.onNext(.fetch([weatherSection]))
-                                emitter.onCompleted()
-                            }, onError: { err in
-                                emitter.onError(err)
-                            })
-                            .disposed(by: self.disposeBag)
-                        
-                        
-                    })
-                    .disposed(by: self.disposeBag)
-                
-                
-                
-                return Disposables.create()
-            }
+            return getWeathersOfAllCity()
         }
     }
     
@@ -82,6 +61,26 @@ class HomeViewReactor: Reactor {
         }
         
         return state
+    }
+    
+    /// 날씨 가져오기
+    private func getWeathersOfAllCity() -> Observable<Mutation> {
+        return Observable<Mutation>.create { emitter in
+            
+            
+            let cities = City.allCases.map { $0.rawValue }
+            let weathersUseCase = self.container.resolve(FetchWeathersUseCase.self)!
+            weathersUseCase.run(cities: cities)
+                .subscribe(onNext: { weatherSections in
+                    emitter.onNext(.fetch(weatherSections))
+                    emitter.onCompleted()
+                }, onError: { err in
+                    emitter.onError(err)
+                })
+                .disposed(by: self.disposeBag)
+            
+            return Disposables.create()
+        }
     }
     
     
