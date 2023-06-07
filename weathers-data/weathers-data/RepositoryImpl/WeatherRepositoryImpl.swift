@@ -19,40 +19,47 @@ class WeatherRepositoryImpl: WeatherRepository {
         self.localDataSource = localDataSource
     }
     
-    func getCoordinates(city: String) -> Observable<Coordinate> {
-        let request = CoordinatesGetRequest(city: city, apiKey: remoteDataSource.apiKey)
-        return remoteDataSource.getCoordinates(request)
-            .compactMap { $0.first }
-            .map { response in
-                let coordinate = Coordinate(city: response.name, lat: response.lat, lon: response.lon)
-                return coordinate
-            }
+    /// 특정 도시의 위치 정보를 가져옴
+    func getCoordinate(city: String) -> Observable<Coordinate> {
+        let coordinate = localDataSource.loadCoordinate(city: city)
+        
+        // 로컬에 저장된 위치 정보가 없으면 새로 요청함
+        if coordinate.isEmpty || coordinate.count < 2 {
+            let request = CoordinatesGetRequest(city: city, apiKey: remoteDataSource.apiKey)
+            return remoteDataSource.getCoordinates(request)
+                .compactMap { $0.first }
+                .do { self.localDataSource.seveCoordinate(city: $0.name, lat: $0.lat, lon: $0.lon) }
+                .map { response in
+                    let coordinate = Coordinate(city: response.name, lat: response.lat, lon: response.lon)
+                    return coordinate
+                }
+        }
+        // 로컬에 저장된 위치 정보 사용
+        else {
+            return Observable.just(Coordinate(city: city, lat: coordinate[0], lon: coordinate[1]))
+        }
     }
     
+    /// 특정 도시의 날씨 정보를 가져옴
     func fetchWeathers(city: String, lat: Double, lon: Double) -> Observable<WeatherSection> {
         let request = WeathersGetRequest(lat: lat, lon: lon, appid: remoteDataSource.apiKey)
         return remoteDataSource.fetchWeathers(request)
-            .map { response in
+            .map { $0.toModel(city: city, iconUrl: self.remoteDataSource.iconUrl) }
+            .map { weatherSection in
+                var weatherSection = weatherSection
+                var newItems: [Weather] = []
                 
-                var weathers: [Weather] = []
-                for e in response.list {
-                    guard let weatherData = e.weather.first else { continue }
-                    let iconUrl = String(format: self.remoteDataSource.iconUrl, weatherData.icon)
+                for weather in weatherSection.items {
+                    if newItems.isEmpty { newItems.append(weather); continue }
+                    guard let lastItem = newItems.last else { continue }
                     
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                    guard let date = dateFormatter.date(from: e.dt_txt) else { continue }
-                    
-                    let weather = Weather(day: date,
-                                          wetherImgUrl: iconUrl,
-                                          weatherText: weatherData.main,
-                                          minCelsius: e.main.temp_min,
-                                          maxCelsius: e.main.temp_max)
-                    
-                    weathers.append(weather)
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.hour], from: lastItem.day, to: weather.day)
+                    let hoursGap = components.hour ?? 0
+                    if hoursGap >= 24 { newItems.append(weather) }
                 }
-                
-                let weatherSection = WeatherSection(header: city, items: weathers)
+
+                weatherSection.items = newItems
                 return weatherSection
             }
     }

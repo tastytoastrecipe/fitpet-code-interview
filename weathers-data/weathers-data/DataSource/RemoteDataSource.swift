@@ -12,7 +12,7 @@ import Alamofire
 class RemoteDataSource {
     
     var apiKey: String { "01ce61da34e19904621517d1b3590d27" }
-    var iconUrl: String { "https://openweathermap.org/img/wn/%@.png" }
+    var iconUrl: String { "https://openweathermap.org/img/w/%@.png" }
     
     private var apiHost: String = "http://api.openweathermap.org/"
     private var coodinatesPath: String = "geo/1.0/direct"
@@ -20,6 +20,7 @@ class RemoteDataSource {
     
     private var jsonEncoder: JSONParameterEncoder
     private var jsonDecoder: JSONDecoder
+    
     
     init() {
         jsonEncoder = JSONParameterEncoder()

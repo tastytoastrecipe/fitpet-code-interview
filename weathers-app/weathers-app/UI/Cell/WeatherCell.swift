@@ -18,6 +18,7 @@ class WeatherCell: UITableViewCell {
     
     let titleLbl: UILabel! = {
         let ui = UILabel()
+        ui.textColor = .darkGray
         return ui
     }()
     
@@ -29,6 +30,8 @@ class WeatherCell: UITableViewCell {
     
     let weatherLbl: UILabel! = {
         let ui = UILabel()
+        ui.font = UIFont.systemFont(ofSize: 14)
+        ui.textColor = .darkGray
         return ui
     }()
     
@@ -41,11 +44,17 @@ class WeatherCell: UITableViewCell {
     
     let minCelsiusLbl: UILabel! = {
         let ui = UILabel()
+        ui.font = UIFont.systemFont(ofSize: 14)
+        ui.textAlignment = .right
+        ui.textColor = .darkGray
         return ui
     }()
     
     let maxCelsiusLbl: UILabel! = {
         let ui = UILabel()
+        ui.font = UIFont.systemFont(ofSize: 14)
+        ui.textAlignment = .right
+        ui.textColor = .darkGray
         return ui
     }()
     
@@ -74,15 +83,15 @@ class WeatherCell: UITableViewCell {
     func setContent(data: Weather) {
         titleLbl.text = data.day.toWeatherDateString()
         
-        if let url = URL(string: data.wetherImgUrl) {
+        if let url = URL(string: data.weatherImgUrl) {
             weatherImg.kf.setImage(with: url)
         }
         
-        weatherLbl.text = data.weatherText
+        weatherLbl.text = data.weatherText.capitalized
         
-        minCelsiusLbl.text = "Min : \(data.minCelsius - kelvin)°C"
+        minCelsiusLbl.text = "Min : \(Int(ceil(data.minCelsius - kelvin)))°C"
         
-        maxCelsiusLbl.text = "Max : \(data.maxCelsius - kelvin)°C"
+        maxCelsiusLbl.text = "Max : \(Int(ceil(data.maxCelsius - kelvin)))°C"
     }
 
     private func setLayout() {

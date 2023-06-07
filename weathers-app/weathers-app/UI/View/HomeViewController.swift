@@ -14,6 +14,16 @@ import SnapKit
 import weathers_domain
 import logger
 
+
+/**
+ 
+ # HomeViewController #
+ 
+ 홈 화면
+ 
+*/
+
+
 class HomeViewController: UIViewController, StoryboardView {
     
     // MARK: - Outlets

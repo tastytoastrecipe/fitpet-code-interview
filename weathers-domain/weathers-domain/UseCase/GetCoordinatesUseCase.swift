@@ -10,6 +10,6 @@ import RxSwift
 
 public class GetCoordinatesUseCase: UseCase {
     public func run(city: String) -> Observable<Coordinate> {
-        return repository.getCoordinates(city: city)
+        return repository.getCoordinate(city: city)
     }
 }

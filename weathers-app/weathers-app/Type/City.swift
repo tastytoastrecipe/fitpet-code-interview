@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum City: String {
+enum City: String, CaseIterable {
     case seoul = "Seoul"
     case london = "London"
     case chicago = "Chicago"

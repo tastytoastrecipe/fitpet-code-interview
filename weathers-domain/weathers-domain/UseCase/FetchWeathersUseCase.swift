@@ -9,7 +9,19 @@ import Foundation
 import RxSwift
 
 public class FetchWeathersUseCase: UseCase {
-    public func run(city: String, lat: Double, lon: Double) -> Observable<WeatherSection> {
-        return repository.fetchWeathers(city: city, lat: lat, lon: lon)
+    
+    // 특정 도시의 날씨 정보 가져옴
+    public func run(city: String) -> Observable<WeatherSection> {
+        return repository.getCoordinate(city: city)
+            .flatMapLatest { self.repository.fetchWeathers(city: $0.city, lat: $0.lat, lon: $0.lon) }
+    }
+    
+    // 여러 도시의 날씨 정보 가져옴
+    public func run(cities: [String]) -> Observable<[WeatherSection]> {
+        var observables: [Observable<WeatherSection>] = []
+        
+        cities.forEach { observables.append(run(city: $0)) }
+        
+        return Observable.zip(observables)
     }
 }
